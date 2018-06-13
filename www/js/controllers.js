@@ -53,4 +53,24 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
-});
+})
+
+.controller('WeatherController', function($scope, $http){
+
+
+  $scope.getWeather = function(location){
+    $http.get('http://api.openweathermap.org/data/2.5/forecast?q='+ location +'&APPID=7f1e8004edf6b7e8ee73a7620d366ec2')
+      .then(function(data){
+        $scope.data = data.data;
+      })
+    //console.log(location);
+  }
+
+
+  
+})
+
+
+;
+
+
